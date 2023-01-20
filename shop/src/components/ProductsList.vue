@@ -3,6 +3,9 @@
         <form class="searchbar">
             <input placeholder="Пошук" v-model="search">
             <input type="submit"  class="btn">
+            <router-link to="/product-cart">
+                <button class="btn_cart">Cart</button>
+            </router-link>
         </form>
         <div class="product" v-for="(item) in filteredItems" v-bind:key="item.id">
             <div class="product-image">
@@ -15,7 +18,7 @@
                     </router-link>
                 </h4>
                 <label>{{item.price}}</label>
-                <button class="btn">Add to cart</button>  
+                <button class="btn" @click="addToCart(item)">Add to cart</button>  
             </div>
         </div>
     </div>
@@ -34,6 +37,11 @@
         mounted: function(){
             this.items = products;
         },
+        methods:{
+            addToCart(item){
+                this.$store.commit('setCart', item);
+            }
+        },
         computed: {
             filteredItems: function() {
                 console.log(this);
@@ -47,3 +55,11 @@
         }
     }
 </script>
+
+<style>
+.btn_cart{
+    background-color: yellow;
+    padding: 5px 20px;
+    margin-left: 10px;
+}
+</style>

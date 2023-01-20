@@ -2,8 +2,7 @@
     <div class="main">
         <h1>Mini Shop</h1>
         <div class="content">
-             <router-view></router-view> 
-            Hello!
+            <router-view></router-view> 
         </div>
     </div>
 </template>
