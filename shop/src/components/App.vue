@@ -2,7 +2,7 @@
     <div class="main">
         <h1>Mini Shop</h1>
         <div class="content">
-            <!-- <router-view></router-view> -->
+             <router-view></router-view> 
             Hello!
         </div>
     </div>

@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { createRouter, createWebHashHistory } from 'vue-router'; 
 
 import App from './components/App.vue'
 import ProductInfo from './components/ProductInfo.vue'
@@ -9,6 +10,12 @@ const routes = [
     { path: '/product/:id', component: ProductInfo }
 ]
 
+const router = createRouter({
+    history: createWebHashHistory,
+    routes,
+})
+
 createApp(App)
+.use(router)
 .use(VueAxios, axios)
 .mount('#app');
